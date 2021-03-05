@@ -1,5 +1,6 @@
 import sass from 'rollup-plugin-sass'
 import typescript from 'rollup-plugin-typescript2'
+import external from 'rollup-plugin-peer-deps-external';
 
 import pkg from './package.json'
 
@@ -8,15 +9,22 @@ export default {
     output: [
       {
         file: pkg.main,
-        format: 'cjs',
-        exports: 'named',
-        sourcemap: true,
-        strict: false
+        format: 'esm',
+        name:"bundle",
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'styled-components': 'styled',
+        },
+        // exports: 'named',
+        // sourcemap: true,
+        // strict: false
       }
     ],
     plugins: [
-      sass({ insert: true }),
+      external(),
+      sass(),
       typescript()
     ],
-    external: ['react', 'react-dom']
+   
   }

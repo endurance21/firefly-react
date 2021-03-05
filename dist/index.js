@@ -1,44 +1,47 @@
+import React, { useState, useEffect } from 'react';
 
-
-function ___$insertStyle(css) {
-  if (!css) {
-    return;
-  }
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  var style = document.createElement('style');
-
-  style.setAttribute('type', 'text/css');
-  style.innerHTML = css;
-  document.head.appendChild(style);
-  return css;
+// interface props {
+//     numberOfFireflies: number,
+//     colorArray: Array<string>,
+//     speed: number,
+//     blinkSpeed: number
+// }
+function ReactFirefly() {
+    const [mousePosition, setMousePosition] = useState(0);
+    useEffect(() => {
+        console.log("i am born ");
+        setInterval(() => {
+            setMousePosition(tmp => tmp + 1);
+        }, 1000);
+    }, []);
+    // const canvasRef = useRef<HTMLCanvasElement| null>(null)
+    // const mouse = useMouse(canvasRef, {
+    //     enterDelay: 100,
+    //     leaveDelay: 100,
+    // })
+    return (React.createElement("div", null, mousePosition));
+    // const [fireFlies, setFireFlies] = useState<Array<Firefly>|null>(null);
+    // const [mousePosition, setMousePosition] = useState<{x:number,y:number}>({x:1,y:2});
+    // useEffect(() => {
+    //     console.log("i am born ")
+    // }, []);
+    // // const canvasRef = useRef<HTMLCanvasElement| null>(null)
+    // // const mouse = useMouse(canvasRef, {
+    // //     enterDelay: 100,
+    // //     leaveDelay: 100,
+    // // })
+    // setInterval(()=>{
+    //     let tmp = {
+    //         x:mousePosition.x+1,
+    //         y:mousePosition.y+1
+    //     }
+    //     setMousePosition(tmp)
+    // },300)
+    // return (<div>
+    //     {mousePosition.x}
+    //     <Canvas></Canvas>
+    //     </div>
+    // )
 }
 
-var React = require('react');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-
-var Firefly = /** @class */ (function () {
-    function Firefly() {
-    }
-    Firefly.prototype.update = function () {
-        this.position.r += this.velocity.dr;
-        this.position.theta += this.velocity.dtheta;
-        this.life *= this.lifeExpectancy;
-    };
-    Firefly.prototype.draw = function () {
-    };
-    return Firefly;
-}());
-
-function Canvas() {
-    return (React__default['default'].createElement("canvas", { className: "firefly-react-canvas" }));
-}
-
-console.log(Canvas);
-console.log(Firefly);
-//# sourceMappingURL=index.js.map
+export default ReactFirefly;

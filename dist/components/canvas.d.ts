@@ -1,2 +1,3 @@
-import { ReactNode } from "react";
-export default function Canvas(): ReactNode;
+/// <reference types="react" />
+import "../styles.scss";
+export default function Canvas(): JSX.Element;
