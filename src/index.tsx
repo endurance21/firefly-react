@@ -12,7 +12,7 @@ import Canvas from "./components/canvas"
 //     blinkSpeed: number
 // }
 
-function ReactFirefly() :JSX.Element{
+function ReactFirefly() :JSX.Element {
     const [mousePosition, setMousePosition] = useState(0);
     useEffect(() => {
         console.log("i am born ");
