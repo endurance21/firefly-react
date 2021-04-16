@@ -62,7 +62,7 @@ function _nonIterableRest() {
 //     blinkSpeed: number
 // }
 
-function ReactFirefly() {
+var ReactFirefly = function ReactFirefly() {
   var _useState = useState(0),
       _useState2 = _slicedToArray(_useState, 2),
       mousePosition = _useState2[0],
@@ -103,6 +103,6 @@ function ReactFirefly() {
   //     <Canvas></Canvas>
   //     </div>
   // )
-}
+};
 
 export default ReactFirefly;

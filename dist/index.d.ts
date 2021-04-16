@@ -1,3 +1,3 @@
-/// <reference types="react" />
-declare function ReactFirefly(): JSX.Element;
+import React from "react";
+declare const ReactFirefly: React.FC<any>;
 export default ReactFirefly;

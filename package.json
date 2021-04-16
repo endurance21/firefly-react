@@ -15,10 +15,9 @@
   "homepage": "https://github.com/endurance21/firefly-react#readme",
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.0",
+    "@rollup/plugin-alias": "^3.1.2",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-generate-package-json": "^3.2.0",
@@ -29,17 +28,22 @@
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "@types/node": "^14.14.41",
     "babel-core": "^6.26.3",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-runtime": "^6.26.0",
     "rollup": "^2.40.0",
+    "rollup-plugin-paths": "^0.0.4",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.30.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "files": [
     "dist"
   ],
-
   "scripts": {
     "build": "rollup -c && tsc --emitDeclarationOnly",
     "start": "rollup -c -w",
