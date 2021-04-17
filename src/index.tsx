@@ -1,57 +1,78 @@
-import React, { FC, useRef, useState, useEffect } from "react";
-import useMouse from "@react-hook/mouse-position";
+import React,{useRef, useState, useEffect} from "react"
+import useMouse from '@react-hook/mouse-position'
 
-// import {Firefly} from "./components/firefly"
+import Canvas from "./components/canvas"
+import  {Firefly} from "./components/firefly"
+import {cartesianToPolar} from "./helpers/cordinatesConversion"
+import { Console } from "node:console"
 
-import Canvas from "./components/canvas";
+type props ={
+  numberOfBirths :number
+}
+const fireflies  :Firefly[] = []
 
-// interface props {
-//     numberOfFireflies: number,
-//     colorArray: Array<string>,
-//     speed: number,
-//     blinkSpeed: number
-// }
+const ReactFirefly = (props)=>{
+  let {numberOfBirths} = props
+  const canvas = useRef<HTMLCanvasElement>()
+  const context = useRef(null)
+  const requestRef = useRef(0)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-const ReactFirefly: React.FC<any> = () => {
-  const [mousePosition, setMousePosition] = useState(0);
   useEffect(() => {
-    console.log("i am born ");
-    setInterval(() => {
-      setMousePosition((tmp) => tmp + 1);
-    }, 1000);
+     context.current = canvas.current.getContext("2d")
+    init()
+    // animate()
+    requestRef.current = requestAnimationFrame(animate);
+    const setFromEvent = (e) =>{
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      console.log(e.x,e.y)
+    }
+    canvas.current.addEventListener("mousemove", setFromEvent);
+    return () => {
+      cancelAnimationFrame(requestRef.current);
+      canvas.current.removeEventListener("mousemove", setFromEvent);
+    }
   }, []);
-  // const canvasRef = useRef<HTMLCanvasElement| null>(null)
-  // const mouse = useMouse(canvasRef, {
-  //     enterDelay: 100,
-  //     leaveDelay: 100,
-  // })
 
-  return <div>{mousePosition}</div>;
-  // const [fireFlies, setFireFlies] = useState<Array<Firefly>|null>(null);
-  // const [mousePosition, setMousePosition] = useState<{x:number,y:number}>({x:1,y:2});
-  // useEffect(() => {
-  //     console.log("i am born ")
-  // }, []);
+  useEffect(() => {
+   giveBirth(mousePosition)
+ }, [mousePosition]);
 
-  // // const canvasRef = useRef<HTMLCanvasElement| null>(null)
-  // // const mouse = useMouse(canvasRef, {
-  // //     enterDelay: 100,
-  // //     leaveDelay: 100,
-  // // })
-  // setInterval(()=>{
-  //     let tmp = {
-  //         x:mousePosition.x+1,
-  //         y:mousePosition.y+1
-  //     }
-  //     setMousePosition(tmp)
+  const init = ()=>{
+    canvas.current.width = window.innerWidth
+    canvas.current.height = window.innerHeight
+    giveBirth({x:300, y:400})
 
-  // },300)
+  }
+  const animate = ()=>{
+    requestRef.current = requestAnimationFrame(animate);
+    context.current.clearRect(0,0,window.innerWidth,window.innerHeight)
+    for(let i  = 0 ; i <  fireflies.length ; i++){
+      fireflies[i].draw(context.current)
+      fireflies[i].update()
 
-  // return (<div>
-  //     {mousePosition.x}
-  //     <Canvas></Canvas>
-  //     </div>
-  // )
-};
+        if(fireflies[i].globalAlpha < 0.001 ){
+          console.log("sdf")
+          delete fireflies[i]
+        }
 
+    }
+    console.log(fireflies.length)
+
+  }
+  const giveBirth = (mouse)=>{
+    let {x,y} = mouse
+    if(x === null || y === null)
+    return
+    let {r, theta} = cartesianToPolar(x, y)
+    for(let i = 0;i<numberOfBirths;i++){
+      let velocity = {dr:(Math.random()*2 +.5),dtheta:(Math.random() - 0.5)}
+      let firefly = new Firefly({r,theta},velocity,null,null,null,null)
+      fireflies.push(firefly)
+    }
+
+
+  }
+return (<Canvas canvasRef={canvas}></Canvas>)
+}
 export default ReactFirefly;

@@ -1,6 +1,8 @@
-import React from "react"
+import React,{MutableRefObject} from "react"
 import "../styles.scss"
-
-export default function Canvas():JSX.Element{
-  return (<canvas className="firefly-react-canvas"></canvas>)
+type props = {
+  canvasRef :any
+}
+export default function Canvas(props):JSX.Element{
+  return (<canvas ref={props.canvasRef} className="firefly-react-canvas"></canvas>)
 }

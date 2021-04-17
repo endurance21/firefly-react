@@ -15,7 +15,6 @@ export default {
   ],
   external: [
     ...Object.keys(pkg.peerDependencies || {}),
-    ...Object.keys(pkg.dependencies || {})
   ],
   plugins: [
     sass(),
