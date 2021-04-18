@@ -9,5 +9,6 @@ export function cartesianToPolar(x:number,y:number){
 
     let r = Math.sqrt(x*x + y*y)
     let theta = Math.atan2(y,x)*(180/Math.PI) // in degree
+
     return {r,theta}
 }
