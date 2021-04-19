@@ -20,16 +20,14 @@ Import it into your React Project
 ````js
 import Firefly from "firefly-react"
 ````
-You can add an Array of colors and the fireflies thus generated will be randomly alloted the colors from this array :
+You can add an Array of colors and the fireflies thus generated will get its color from this array in  a random fashion  :
 
 ```js
 const colors =  ["Blue ", "Green", "Red", "Orange"];
 ```
 
 ```JSX
-<div className="App">
-      
-</div>
+   <Firefly numberOfBirths={2} canvasWidth={window.innerWidth} canvasHeight={window.innerHeight} colors={colors} changeDirectionFrequency={10} randomMotion={true}></Firefly>
 ```
 
 ## The Result
