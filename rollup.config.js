@@ -17,12 +17,12 @@ export default {
     ...Object.keys(pkg.peerDependencies || {}),
   ],
   plugins: [
-    sass(),
     typescript(),
     babel({
       extensions: ['.jsx', '.js', '.tsx'],
       exclude: 'node_modules/*'
     }),
+    sass({insert:true}),
     generatePackageJson({
       outputFolder: 'dist',
       baseContents: (pkg) => ({

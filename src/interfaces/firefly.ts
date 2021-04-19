@@ -1,13 +1,17 @@
 export interface Position{
-    r:number;
-    theta:number;
+    x:number;
+    y:number;
 }
 
 export interface Velocity {
-    dr:number;
-    dtheta:number;
+    speed:number;
+    direction:number;
 }
 export interface Dimension {
     width: number;
     height: number;
+}
+export interface DirectionTurner{
+    magnitude :number
+    direction:number
 }
