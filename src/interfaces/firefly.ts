@@ -11,7 +11,7 @@ export interface Dimension {
     width: number;
     height: number;
 }
-export interface Acceleration {
+export interface DirectionTurner{
     magnitude :number
     direction:number
 }
