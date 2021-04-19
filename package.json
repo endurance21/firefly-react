@@ -1,6 +1,6 @@
 {
   "name": "firefly-react",
-  "version": "22.04.2020",
+  "version": "22.04.2021",
   "description": "play with fireflies on canvas with mouse @react ",
   "main": "dist/index.js",
   "repository": {
