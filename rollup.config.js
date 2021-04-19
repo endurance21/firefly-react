@@ -28,6 +28,8 @@ export default {
       baseContents: (pkg) => ({
         name: pkg.name,
         main: 'index.js',
+        version:pkg.version,
+
 
       })
     }),

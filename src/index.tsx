@@ -34,6 +34,9 @@ const setFromEvent = (e,setMousePosition,boundary) =>{
 }
 const ReactFirefly = (props)=>{
   let {numberOfBirths, canvasWidth, canvasHeight,colors,changeDirectionFrequency,randomMotion} = props
+  if(numberOfBirths === null){
+    numberOfBirths = 2
+  }
 
   const canvas = useRef<HTMLCanvasElement>()
   const context = useRef(null)
