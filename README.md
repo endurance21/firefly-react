@@ -48,4 +48,11 @@ randomMotion| bool | false  |   this is the most significant and amazing feature
 changeDirectionFrequency | [10-120] degree Angle | 30 | this value controlls how often the firefly will change the direction in random walk motion, this do not do anything alone if randomMotion props is set to false.
 
 
+## Want to Contribute ?
+Contributing to Open source is self rewarding and i love being part of it , if you too are excited about it , i would love to collaborate :3 .
+Currently we need help with :
+1.Using multithreading concepts to boost our  canvas rendering
+2.particle pooling and hence performance optimization
+3.I do believe this project has immense potential to offer some good out there , so any proposal for  new feature addition would be highly appreciated .
+4.Strong type checking and dynamic object validation would also make this library robust 
 
