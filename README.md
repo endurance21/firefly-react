@@ -51,8 +51,9 @@ changeDirectionFrequency | [10-120] degree Angle | 30 | this value controlls how
 ## Want to Contribute ?
 Contributing to Open source is self rewarding and i love being part of it , if you too are excited about it , i would love to collaborate :3 .
 Currently we need help with :
-1.Using multithreading concepts to boost our  canvas rendering
-2.particle pooling and hence performance optimization
-3.I do believe this project has immense potential to offer some good out there , so any proposal for  new feature addition would be highly appreciated .
-4.Strong type checking and dynamic object validation would also make this library robust 
+
+* Using multithreading concepts to boost our  canvas rendering
+* particle pooling and hence performance optimization
+* I do believe this project has immense potential to offer some good out there , so any proposal for  new feature addition would be highly appreciated .
+* Strong type checking and dynamic object validation would also make this library robust 
 
