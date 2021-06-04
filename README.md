@@ -45,7 +45,7 @@ window.addEventListener(
 );
 ```
 
-The positioning of the **Firefly** component must be done on the app.jsx / app.tsx with the absolute position and height and width of both **Firefly** component and **div** containing Firefly component must updated based on window size.
+The Firefly component is basically a HTMLCanvas element under the hood, you need to assign the height , width, and position accordingly. you can use Z-index and relative or absolute poisiton values of css to adjust its positon on z-axis, usually we tend to keep this element behind the CTA and above the background to have a better effect, but you can also give it Z-index:1000000 to ensure it appears right in front !
 
 ```JSX
 <>
@@ -67,6 +67,7 @@ The positioning of the **Firefly** component must be done on the app.jsx / app.t
   position: absolute;
   top: 0;
   left: 0;
+  z-index:1
 }
 ```
 
