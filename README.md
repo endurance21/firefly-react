@@ -1,11 +1,14 @@
-<img src="./src/assets/img.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px; height: 400px"/>
+
+https://user-images.githubusercontent.com/43696525/120790875-1f1dc680-c551-11eb-86d9-e4232a5ba8b1.mp4
+
+
 
 <p style="font-size: 1.5rem">
 A React Component for showing interactive animation of fireflies on canvas . As seen on the main page of http://thomso.in
 </p>
 
+## LIVE Playgorund 
+https://codesandbox.io/s/example-firefly-react-forked-9gsye?file=/src/App.js
 
 ## USAGE :
 
@@ -67,10 +70,6 @@ The positioning of the **Firefly** component must be done on the app.jsx / app.t
   left: 0;
 }
 ```
-
-## An Illustrative Example
-
-https://codesandbox.io/s/example-firefly-react-yfhg0?file=/src/App.js
 
 ## Props :
 
