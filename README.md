@@ -3,15 +3,9 @@
      style="float: left; margin-right: 10px; height: 400px"/>
 
 <p style="font-size: 1.5rem">
-A React Component for showing interactive animation of fireflies on canvas . As seen on the main page of <a>http://thomso.in</a>
+A React Component for showing interactive animation of fireflies on canvas . As seen on the main page of <a href"http://thomso.in"> THOMSO 19 </a>
 </p>
-## Some Highlights :
 
-- ### No external dependecies required ( yeaa ! pure vanilla )
-- ### library size is only 16kb , cz Size Matters xxd
-- ### Project Uses
-  - TypeScript
-  - Rollup
 
 ## USAGE :
 
@@ -56,12 +50,9 @@ The positioning of the **Firefly** component must be done on the app.jsx / app.t
       style={{ height: canvasHeight, width: canvasWidth }}
    >
       <Firefly
-         numberOfBirths={10}
          canvasWidth={canvasWidth}
          canvasHeight={canvasHeight}
          colors={colors}
-         changeDirectionFrequency={10}
-         randomMotion={true}
       />
    </div>
    <div className="textBox">
@@ -85,12 +76,11 @@ https://codesandbox.io/s/example-firefly-react-yfhg0?file=/src/App.js
 
 | Props                    | Value                 | default             | description                                                                                                                                                      |
 | ------------------------ | --------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| numberOfBirths           | [ 1 - 10 ]            | 2                   | this contolls the number of fireflies that will born when the mouse will be moved                                                                                |
 | canvasWidth              | [0,SAFE-INT]          | HMTL CANVAS DEFAULT | sets width of the canvas                                                                                                                                         |
 | canvasHeight             | [0-SAFE_INT]          | HMTL CANVAS DEFAULT | sets the height of the canvas                                                                                                                                    |
-| colors                   | [ ]                   | ["black"]           | fireflies thus generated will be randomly alloted the colors from this array                                                                                     |
-| randomMotion             | bool                  | false               | this is the most significant and amazing feature that mimics the random motion of a read world firefly while flying,set to `true` and see the magic              |
-| changeDirectionFrequency | [10-120] degree Angle | 30                  | this value controlls how often the firefly will change the direction in random walk motion, this do not do anything alone if randomMotion props is set to false. |
+| colors                   | [ ]                   |  [ "#f15bb5","#f72585"]         | fireflies thus generated will be randomly alloted the colors from this array                                                                                     |
+
+
 
 ## Want to Contribute ?
 
