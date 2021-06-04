@@ -5,12 +5,9 @@ import {getRandomInt} from "./helpers/random"
 import {throttle} from "./helpers/throttle"
 
 type props ={
-  numberOfBirths :number
   canvasWidth:number
   canvasHeight:number
-  colors:[]
-  changeDirectionFrequency:number
-  randomMotion:boolean
+  colors:string[]
 
 }
 
@@ -28,15 +25,23 @@ const giveBirth :any = throttle(function (mouse,numberOfBirths,colors,changeDire
   }
 
 
-} , 200)
+} , 50)
 const setFromEvent = (e,setMousePosition,boundary) =>{
   setMousePosition({ x: e.clientX - boundary.current.x, y: e.clientY - boundary.current.y });
 }
-const ReactFirefly = (props)=>{
-  let {numberOfBirths, canvasWidth, canvasHeight,colors,changeDirectionFrequency,randomMotion} = props
-  if(numberOfBirths === null){
-    numberOfBirths = 2
-  }
+const ReactFirefly = (props:props)=>{
+  let  numberOfBirths = 2 ;
+  let{ canvasWidth, canvasHeight, colors } = props
+
+   let changeDirectionFrequency = 20;
+   let randomMotion = true
+
+   if(!colors || colors.length == 0){
+    colors = [
+        "#f15bb5","#f72585"]
+    }
+
+
 
   const canvas = useRef<HTMLCanvasElement>()
   const context = useRef(null)
@@ -89,11 +94,10 @@ const ReactFirefly = (props)=>{
   }
   const animate = ()=>{
     requestRef.current = requestAnimationFrame(animate);
-    context.current.clearRect(0,0,boundary.current.width,boundary.current.height)
 
     for(let i  = 0 ; i <  fireflies.length ; i++){
+      fireflies[i].update(boundary.current, context.current)
       fireflies[i].draw(context.current)
-      fireflies[i].update(boundary.current)
 
         if(fireflies[i].globalAlpha < 0.01 ){
           fireflies.splice(i,1) //remove the dead firefly from array
