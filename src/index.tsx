@@ -8,6 +8,7 @@ type props ={
   canvasWidth:number
   canvasHeight:number
   colors:string[]
+  className:string
 
 }
 
@@ -31,7 +32,7 @@ const setFromEvent = (e,setMousePosition,boundary) =>{
 }
 const ReactFirefly = (props:props)=>{
   let  numberOfBirths = 2 ;
-  let{ canvasWidth, canvasHeight, colors } = props
+  let{ canvasWidth, canvasHeight, colors,className } = props
 
    let changeDirectionFrequency = 20;
    let randomMotion = true
@@ -107,6 +108,6 @@ const ReactFirefly = (props:props)=>{
 
   }
 
-return (<Canvas canvasRef={canvas} ></Canvas>)
+return (<Canvas canvasRef={canvas} className={className} ></Canvas>)
 }
 export default ReactFirefly;
