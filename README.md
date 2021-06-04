@@ -48,23 +48,21 @@ The positioning of the **Firefly** component must be done on the app.jsx / app.t
 
 ```JSX
 <>
-   <div
-      className="firefly"
-      style={{ height: canvasHeight, width: canvasWidth }}
-   >
+
       <Firefly
          canvasWidth={canvasWidth}
          canvasHeight={canvasHeight}
          colors={colors}
+         className="firefly-react"
       />
-   </div>
+
    <div className="textBox">
       <div className="text">Firefly-react</div>
    </div>
 </>
 
 // Style
-.firefly {
+.firefly-react{
   position: absolute;
   top: 0;
   left: 0;
@@ -78,6 +76,8 @@ The positioning of the **Firefly** component must be done on the app.jsx / app.t
 | canvasWidth              | [0,SAFE-INT]          | HMTL CANVAS DEFAULT | sets width of the canvas                                                                                                                                         |
 | canvasHeight             | [0-SAFE_INT]          | HMTL CANVAS DEFAULT | sets the height of the canvas                                                                                                                                    |
 | colors                   | [ ]                   |  [ "#f15bb5","#f72585"]         | fireflies thus generated will be randomly alloted the colors from this array                                                                                     |
+|className                   | string                   |  ""         | add a className to the canvas element                                                                                     |
+
 
 
 
