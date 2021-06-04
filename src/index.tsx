@@ -26,7 +26,7 @@ const giveBirth :any = throttle(function (mouse,numberOfBirths,colors,changeDire
   }
 
 
-} , 50)
+} , 95)
 const setFromEvent = (e,setMousePosition,boundary) =>{
   setMousePosition({ x: e.clientX - boundary.current.x, y: e.clientY - boundary.current.y });
 }
