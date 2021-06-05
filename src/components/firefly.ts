@@ -32,7 +32,7 @@ export class Firefly {
 
     update(boundary,context:any){
         //clear the last firefly from frame  to show a animation effect
-        context.clearRect(this.position.x - this.size.width*2, this.position.y-this.size.width*2, this.size.width*4, this.size.width*4)
+        // context.clearRect(this.position.x - this.size.width*2, this.position.y-this.size.width*2, this.size.width*4, this.size.width*4)
 
         if(this.randomMotion){
             this.changeDirecton()
@@ -86,8 +86,8 @@ export class Firefly {
         let {width, height} = this.size
         context.beginPath();
         context.globalAlpha = this.globalAlpha
-        context.shadowBlur = 3;
-        context.shadowColor = "red";
+        context.shadowBlur = 5;
+        context.shadowColor = this.color;
         context.fillStyle = this.color
         context.arc(x, y, width, 0, Math.PI*2,false)
         context.fill()

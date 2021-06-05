@@ -65,24 +65,32 @@ const ReactFirefly = (props:props)=>{
   }, []);
 
   useEffect(() => {
+    resizeCanvas()
+    setBoundary()
+  }, [props]);
+
+  useEffect(() => {
    giveBirth(mousePosition,numberOfBirths, colors,changeDirectionFrequency,randomMotion)
  }, [mousePosition]);
 
 
 
   const init = ()=>{
-    canvas.current.width = canvasWidth
-    canvas.current.height = canvasHeight
+    resizeCanvas()
     context.current = canvas.current.getContext("2d")
 
     setBoundary()
 
-    giveBirth({x:300, y:400},numberOfBirths,colors,changeDirectionFrequency,randomMotion)
+    giveBirth({x:canvasWidth/2, y:canvasHeight/2 -25},25,colors,changeDirectionFrequency,randomMotion)
 
     canvas.current.addEventListener("mousemove",(e)=> setFromEvent(e,setMousePosition,boundary));
     window.addEventListener("scroll",setBoundary)
 
 
+  }
+  const resizeCanvas = ()=>{
+    canvas.current.width = canvasWidth
+    canvas.current.height = canvasHeight
   }
   const setBoundary = ()=>{
     let rect = canvas.current.getBoundingClientRect();
@@ -95,7 +103,7 @@ const ReactFirefly = (props:props)=>{
   }
   const animate = ()=>{
     requestRef.current = requestAnimationFrame(animate);
-
+    context.current.clearRect(0, 0, canvasWidth, canvasHeight)
     for(let i  = 0 ; i <  fireflies.length ; i++){
       fireflies[i].update(boundary.current, context.current)
       fireflies[i].draw(context.current)
