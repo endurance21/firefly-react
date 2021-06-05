@@ -30,7 +30,7 @@ export class Firefly {
     }
 
 
-    update(boundary,context:any){
+    update(boundary){
         //clear the last firefly from frame  to show a animation effect
         // context.clearRect(this.position.x - this.size.width*2, this.position.y-this.size.width*2, this.size.width*4, this.size.width*4)
 

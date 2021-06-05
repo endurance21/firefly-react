@@ -105,7 +105,7 @@ const ReactFirefly = (props:props)=>{
     requestRef.current = requestAnimationFrame(animate);
     context.current.clearRect(0, 0, canvasWidth, canvasHeight)
     for(let i  = 0 ; i <  fireflies.length ; i++){
-      fireflies[i].update(boundary.current, context.current)
+      fireflies[i].update(boundary.current)
       fireflies[i].draw(context.current)
 
         if(fireflies[i].globalAlpha < 0.01 ){
