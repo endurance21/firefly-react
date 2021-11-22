@@ -22,7 +22,7 @@ export function vectorSumPolar(vector1,vector2){
     let {r:r2,theta:theta2} = vector2
     let r = Math.sqrt(r1*r1 + r2*r2 + 2*r1*r2*Math.cos(degreeToRadian(theta1 - theta2)))
     let theta =  inBound(theta1 + normalizeAngle(Math.atan2(r2*Math.sin(degreeToRadian(theta2-theta1)), r1 +  r2*Math.cos(degreeToRadian(theta2-theta1)))))
-    // console.log("2",theta,theta1,r2)
+
     return {r,theta}
 
 }

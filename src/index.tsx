@@ -13,6 +13,7 @@ type props ={
 }
 
 const fireflies  :Firefly[] = []
+
 const giveBirth :any = throttle(function (mouse,numberOfBirths,colors,changeDirectionFrequency,randomMotion){
   let {x,y} = mouse
   if(x === null || y === null)
@@ -27,6 +28,7 @@ const giveBirth :any = throttle(function (mouse,numberOfBirths,colors,changeDire
 
 
 } , 95)
+
 const setFromEvent = (e,setMousePosition,boundary) =>{
   setMousePosition({ x: e.clientX - boundary.current.x, y: e.clientY - boundary.current.y });
 }

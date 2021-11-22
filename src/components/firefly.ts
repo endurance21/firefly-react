@@ -43,15 +43,18 @@ export class Firefly {
 
         this.position.x+=vx;
         this.position.y+=vy;
+
         this.stepCounter++;  //firefly  walked one more step
 
-        this.globalAlpha/=this.dyingRate;
+        this.globalAlpha/=this.dyingRate; // reducing firefly opacity to simulate dying effect
 
     }
     resolve(boundary){
         let {x:x1,y:y1,width,height} = boundary
         let {x,y} = this.position
         let {x:vx,y:vy} = polarToCartesian(this.velocity.speed, this.velocity.direction)
+
+
         if(x + this.size.width  >=  width - this.size.width && vx > 0){
             let {x:new_vx,y:new_vy} = circleToLine({x:vx,y:vy},{x:1,y:0})
             let {r,theta} = cartesianToPolar(new_vx,new_vy)
@@ -84,6 +87,7 @@ export class Firefly {
 
         let {x,y} =this.position
         let {width, height} = this.size
+
         context.beginPath();
         context.globalAlpha = this.globalAlpha
         context.shadowBlur = 5;
@@ -92,15 +96,20 @@ export class Firefly {
         context.arc(x, y, width, 0, Math.PI*2,false)
         context.fill()
         context.closePath()
+
     }
 
     changeDirecton(){
+        // the real algorigthm responsible for simulating smooth walk of firefly
+        
         let turnIndirection = getRandomInt(-1,1)//left , straight ,right
+
         if(this.changeDirectionFrequency && this.stepCounter == this.changeDirectionFrequency ){
             this.velocity.direction +=turnIndirection*this.directionTurner.direction
             this.velocity.direction = inBound(this.velocity.direction)
             this.stepCounter = 0 //reset the step counter to track when next it has change its direction
         }
+
 
     }
 
