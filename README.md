@@ -5,7 +5,7 @@
 
 
 <p style="font-size: 1.5rem">
-A React Component for showing interactive animation of fireflies on canvas . As seen on the main page of http://thomso.in
+A React Component for showing interactive animation of fireflies on websites. 
    <div>  
       <img alt="npm" src="https://img.shields.io/npm/dt/firefly-react?label=npm%20downloads">
       <img alt="npms.io (quality)" src="https://img.shields.io/npms-io/maintenance-score/firefly-react">
@@ -54,21 +54,18 @@ window.addEventListener(
 The Firefly component is basically a HTMLCanvas element under the hood, you need to assign the height , width, and position accordingly. you can use Z-index and relative or absolute poisiton values of css to adjust its positon on z-axis, usually we tend to keep this element behind the CTA and above the background to have a better effect, but you can also give it Z-index:1000000 to ensure it appears right in front !
 
 ```JSX
-<>
 
-      <Firefly
-         canvasWidth={canvasWidth}
-         canvasHeight={canvasHeight}
-         colors={colors}
-         className="firefly-react"
-      />
 
-   <div className="textBox">
-      <div className="text">Firefly-react</div>
-   </div>
-</>
+   <Firefly
+      canvasWidth={canvasWidth}
+      canvasHeight={canvasHeight}
+      colors={colors}
+      className="firefly-react"
+   />
 
-// Style
+```
+```CSS
+
 .firefly-react{
   position: absolute;
   top: 0;
