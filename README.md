@@ -10,6 +10,7 @@ A React Component for showing interactive animation of fireflies on canvas . As 
       <img alt="npm" src="https://img.shields.io/npm/dt/firefly-react?label=npm%20downloads">
       <img alt="npms.io (quality)" src="https://img.shields.io/npms-io/maintenance-score/firefly-react">
       <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/firefly-react">
+      <img alt="GitHub" src="https://img.shields.io/github/license/endurance21/firefly-react">
       </div>
 </p>
 
