@@ -14,7 +14,7 @@ export function polarToCartesian(r: number, theta: number) {
  * convert cordinate from cartesian to polar .
  * @param {Number} x - x-cordinate of the pont.
  * @param {Number} y - y-cordinate of the point.
- * @returns {Object} cartesian cordinate.
+ * @returns {Object} polar cordinate.
  */
 
 export function cartesianToPolar(x: number, y: number) {
@@ -78,6 +78,7 @@ export function radianToDegree(radian) {
  * @param {Number} degree - angle given in degree
  * @returns {Number}    inbound angle
  */
-export function inBound(degree) {
-  return degree <= 360 ? degree : degree % 360;
+
+export function inBound(degree){
+    return (degree <=360 ? degree : degree % 360)
 }
