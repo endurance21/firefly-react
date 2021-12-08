@@ -10,9 +10,16 @@ type props = {
   colors: string[];
   className: string;
 };
-
+/**
+ *  The single array data structure to store all fireflies.
+ */
 const fireflies: Firefly[] = [];
 
+/**
+ *  throtlled function , so that it smartly avoid redundant function call and hence avoid 
+ * to give birth so many fireflies in one mouse move or so.
+ * @function
+ */
 const giveBirth: any = throttle(function (
   mouse,
   numberOfBirths,
@@ -40,10 +47,20 @@ const giveBirth: any = throttle(function (
   }
 },
 95);
-
+/**
+ *  setting the correct cordinates where to generate the fireflies relative to the canvas
+ * @function
+ */
 const setFromEvent = (e, setMousePosition, boundary) => {
   setMousePosition({ x: e.clientX - boundary.current.x, y: e.clientY - boundary.current.y });
 };
+
+/**
+ *  The main React component which orchastrates everything
+ * from particle generatio, collision resolution to  animation and
+ * painting canvas.
+ */
+
 const ReactFirefly = (props: props) => {
   let numberOfBirths = 2;
   let { canvasWidth, canvasHeight, colors, className } = props;
@@ -86,6 +103,11 @@ const ReactFirefly = (props: props) => {
     giveBirth(mousePosition, numberOfBirths, colors, changeDirectionFrequency, randomMotion);
   }, [mousePosition]);
 
+  /**
+ *  This function initilizes the whole state of the project 
+ * including canvas context to initial give firefly generations.
+ * @function
+ */
   const init = () => {
     resizeCanvas();
     context.current = canvas.current.getContext("2d");
@@ -105,10 +127,20 @@ const ReactFirefly = (props: props) => {
     );
     window.addEventListener("scroll", setBoundary);
   };
+
+  /**
+ *  wrapper function to just resize the canvas dimension 
+ * @function
+ */
   const resizeCanvas = () => {
     canvas.current.width = canvasWidth;
     canvas.current.height = canvasHeight;
   };
+  /**
+ *  whenever user resizes the canvas in your application this handler
+ * takes care of new boundary of the canvas and updates accordinglyß
+ * @function
+ */
   const setBoundary = () => {
     let rect = canvas.current.getBoundingClientRect();
     let x = rect.left;
@@ -118,6 +150,13 @@ const ReactFirefly = (props: props) => {
     boundary.current.width = canvasWidth;
     boundary.current.height = canvasHeight;
   };
+
+  /**
+ *  This is animation engine of the whole project
+ * it updates position of every firefly and is 
+ * also responsible for painting to the canvas
+ * @function
+ */
   const animate = () => {
     requestRef.current = requestAnimationFrame(animate);
     context.current.clearRect(0, 0, canvasWidth, canvasHeight);
