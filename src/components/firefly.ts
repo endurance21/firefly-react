@@ -121,13 +121,10 @@ export class Firefly {
     }
     /**
      * Changes the direction of the firefly.
-     * It turns the current velocity vector by some random amount ensuring the smooth walk simulation
-     * 
+     * It turns the current velocity vector by some random amount ensuring the smooth walk simulation.
      */
     
     changeDirecton(){
-        // the real algorigthm responsible for simulating smooth walk of firefly
-        
         let turnIndirection = getRandomInt(-1,1)//left , straight ,right
 
         if(this.changeDirectionFrequency && this.stepCounter == this.changeDirectionFrequency ){
