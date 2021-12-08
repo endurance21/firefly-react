@@ -95,3 +95,11 @@ Currently we need help with :
 - particle pooling and hence performance optimization
 - I do believe this project has immense potential to offer some good out there , so any proposal for new feature addition would be highly appreciated .
 - Strong type checking and dynamic object validation would also make this library robust
+
+
+## Quote
+To learn and not to do is really not to learn. To know and not to do is really not to know.
+<div>~Stephen R. Covey</div>
+
+<br>
+Thank you for reaching ♥️
