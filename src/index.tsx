@@ -137,7 +137,7 @@ const ReactFirefly = (props: props) => {
     canvas.current.height = canvasHeight;
   };
   /**
- *  whenever user resizes the canvas in your application this handler
+ *  whenever user resizes the canvas in the application this handler
  * takes care of new boundary of the canvas and updates accordinglyß
  * @function
  */
