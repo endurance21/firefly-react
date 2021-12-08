@@ -2,6 +2,11 @@ import {Position, Velocity,DirectionTurner, Dimension} from "../interfaces/firef
 import {polarToCartesian,cartesianToPolar,inBound } from "../helpers/cordinatesConversion"
 import {getRandomInt} from "../helpers/random"
 import {circleToLine} from "../helpers/collision"
+
+/**
+ * Represents the firefly       
+ * @class
+ */
 export class Firefly {
     position: Position;
     velocity: Velocity;
@@ -14,7 +19,12 @@ export class Firefly {
     randomMotion:boolean
     changeDirectionFrequency:number;
     directionTurner:DirectionTurner;
-
+    
+    
+    /**
+     * Represents firfly constructor.
+     * @constructor
+     */
     constructor( position: Position | null, velocity: Velocity | null,directionTurner: DirectionTurner | null, changeDirectionFrequency: number | null,color: string | null, size: Dimension | null, dyingRate: number | null,randomMotion:boolean|null){
         this.position = position || {x:100, y:20}
         this.velocity = velocity || {speed:.05, direction:45} //direction in degree
@@ -28,12 +38,14 @@ export class Firefly {
         this.changeDirectionFrequency = getRandomInt(30,changeDirectionFrequency)
         this.directionTurner = directionTurner || {magnitude:2,direction:20}
     }
-
+    
+    /**
+     * Updates the state of individual firefly
+     * clears the last firefly from frame  to show a animation effect
+     * @param {Object} contains the position and dimention of the canvas
+     */
 
     update(boundary){
-        //clear the last firefly from frame  to show a animation effect
-        // context.clearRect(this.position.x - this.size.width*2, this.position.y-this.size.width*2, this.size.width*4, this.size.width*4)
-
         if(this.randomMotion){
             this.changeDirecton()
         }
@@ -49,6 +61,11 @@ export class Firefly {
         this.globalAlpha/=this.dyingRate; // reducing firefly opacity to simulate dying effect
 
     }
+   /**
+     * resolves any possible collision with other firefly 
+     * @param {Object} contains the position and dimention of the canvas
+    */
+
     resolve(boundary){
         let {x:x1,y:y1,width,height} = boundary
         let {x,y} = this.position
@@ -83,6 +100,10 @@ export class Firefly {
             this.velocity.direction = theta;
         }
     }
+     /**
+     *  draws the the firefly onto the canvas
+     * @param {Object} standard canvas2d context
+     */
     draw(context:any){
 
         let {x,y} =this.position
@@ -98,7 +119,12 @@ export class Firefly {
         context.closePath()
 
     }
-
+    /**
+     * Changes the direction of the firefly.
+     * It turns the current velocity vector by some random amount ensuring the smooth walk simulation
+     * 
+     */
+    
     changeDirecton(){
         // the real algorigthm responsible for simulating smooth walk of firefly
         
