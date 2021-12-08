@@ -18,6 +18,7 @@ const fireflies: Firefly[] = [];
 /**
  *  throtlled function , so that it smartly avoid redundant function call and hence avoid 
  * to give birth so many fireflies in one mouse move or so.
+ * @function
  */
 const giveBirth: any = throttle(function (
   mouse,
@@ -48,6 +49,7 @@ const giveBirth: any = throttle(function (
 95);
 /**
  *  setting the correct cordinates where to generate the fireflies relative to the canvas
+ * @function
  */
 const setFromEvent = (e, setMousePosition, boundary) => {
   setMousePosition({ x: e.clientX - boundary.current.x, y: e.clientY - boundary.current.y });
@@ -104,6 +106,7 @@ const ReactFirefly = (props: props) => {
   /**
  *  This function initilizes the whole state of the project 
  * including canvas context to initial give firefly generations.
+ * @function
  */
   const init = () => {
     resizeCanvas();
@@ -127,6 +130,7 @@ const ReactFirefly = (props: props) => {
 
   /**
  *  wrapper function to just resize the canvas dimension 
+ * @function
  */
   const resizeCanvas = () => {
     canvas.current.width = canvasWidth;
@@ -135,6 +139,7 @@ const ReactFirefly = (props: props) => {
   /**
  *  whenever user resizes the canvas in your application this handler
  * takes care of new boundary of the canvas and updates accordinglyß
+ * @function
  */
   const setBoundary = () => {
     let rect = canvas.current.getBoundingClientRect();
@@ -150,6 +155,7 @@ const ReactFirefly = (props: props) => {
  *  This is animation engine of the whole project
  * it updates position of every firefly and is 
  * also responsible for painting to the canvas
+ * @function
  */
   const animate = () => {
     requestRef.current = requestAnimationFrame(animate);
