@@ -18,20 +18,21 @@
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-react": "^7.13.13",
+    "@rollup/plugin-alias": "^3.1.2",
     "@types/node": "^14.14.41",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "babel-core": "^6.26.3",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-runtime": "^6.26.0",
     "node-sass": "^5.0.0",
+    "prettier": "2.5.1",
     "rollup": "^2.40.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "rollup-plugin-paths": "^0.0.4",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.30.0",
-    "@rollup/plugin-alias": "^3.1.2",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-generate-package-json": "^3.2.0",
     "typescript": "^4.2.2"
   },
   "peerDependencies": {
@@ -44,6 +45,8 @@
   "scripts": {
     "build": "rollup -c && tsc --emitDeclarationOnly",
     "start": "rollup -c -w",
-    "publish:public": "npm publish --access public"
+    "publish:public": "npm publish --access public",
+    "pretty:check":"prettier --check src/ ",
+    "pretty:write":"prettier --write src/"
   }
 }
