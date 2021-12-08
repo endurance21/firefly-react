@@ -88,7 +88,7 @@ The Firefly component is basically a HTMLCanvas element under the hood, you need
 
 ## Want to Contribute ?
 
-Contributing to Open source is self rewarding and i love being part of it , if you too are excited about it , i would love to collaborate :3 .
+Contributing to Open source is self rewarding and i love being part of it , if you too are excited about it , i would love to collaborate ♥️ .
 Currently we need help with :
 
 - Using multithreading concepts to boost our canvas rendering
