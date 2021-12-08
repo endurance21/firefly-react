@@ -6,6 +6,7 @@
 
 <p style="font-size: 1.5rem">
 A React Component for showing interactive animation of fireflies on canvas . As seen on the main page of http://thomso.in
+<img alt="npm" src="https://img.shields.io/npm/dt/firefly-react?label=npm%20downloads">
 </p>
 
 ## LIVE Playgorund 
