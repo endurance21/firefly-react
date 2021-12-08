@@ -15,7 +15,7 @@ export function polarToCartesian(r:number, theta:number){
  * convert cordinate from cartesian to polar .  
  * @param {Number} x - x-cordinate of the pont.
  * @param {Number} y - y-cordinate of the point.
- * @returns {Object} cartesian cordinate.
+ * @returns {Object} polar cordinate.
  */
 
 export function cartesianToPolar(x:number,y:number){
