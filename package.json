@@ -1,7 +1,7 @@
 {
   "name": "firefly-react",
   "version": "22.04.20231",
-  "description": "play with fireflies on canvas with mouse @react ",
+  "description": "A react component to bring interactive fireflies animation on websites",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
