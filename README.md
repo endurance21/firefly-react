@@ -5,7 +5,7 @@
 
 
 <p style="font-size: 1.5rem">
-A React Component for showing interactive animation of fireflies on websites. 
+A React Component for building interactive animation of fireflies on websites. 
    <div>  
       <img alt="npm" src="https://img.shields.io/npm/dt/firefly-react?label=npm%20downloads">
       <img alt="npms.io (quality)" src="https://img.shields.io/npms-io/maintenance-score/firefly-react">
