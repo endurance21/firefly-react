@@ -28,14 +28,43 @@ Import it into your React Project
 ```js
 import Firefly from "firefly-react";
 ```
+in app.js ( 1 line code and done 😎) :
 
-You can add an Array of colors and the fireflies thus generated will get its color(can be hex-code or in rbga format) from this array in a random fashion :
+```JSX
+
+
+   <Firefly
+      canvasWidth={200}  // you can choose any positive width suitable for your purpose
+      canvasHeight={300} // you can choose any positive height suitable for your purpose
+   />
+
+```
+
+## Customizations 
+
+### Colors
+One can add an Array of colors and the fireflies thus generated will get its color(can be hex-code or in rbga format) from this array in a random fashion :
 
 ```js
 const colors = ["Blue ", "Green", "Red", "Orange"];
 ```
 
-On every window resize canvas height and width is needed to be updated.
+
+```JSX
+
+
+   <Firefly
+      canvasWidth={200}  // you can choose any positive width suitable for your purpose
+      canvasHeight={300} // you can choose any positive height suitable for your purpose
+      colors={colors}
+   />
+
+
+```
+
+### Responsive
+To make the canvas screen responsive, update the height and width of the canvas using `canvasHeight` and `canvaswidth` props.
+Here is an example using react-hooks.
 
 ```JSX
 const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
@@ -49,24 +78,28 @@ window.addEventListener(
    },
    false
 );
-```
 
-The Firefly component is basically a HTMLCanvas element under the hood, you need to assign the height , width, and position accordingly. you can use Z-index and relative or absolute poisiton values of css to adjust its positon on z-axis, usually we tend to keep this element behind the CTA and above the background to have a better effect, but you can also give it Z-index:1000000 to ensure it appears right in front !
-
-```JSX
 
 
    <Firefly
-      canvasWidth={canvasWidth}
-      canvasHeight={canvasHeight}
-      colors={colors}
-      className="firefly-react"
+      canvasWidth={canvasWidth} 
+      canvasHeight={canvasHeight} 
+   />
+
+
+
+```
+### Css styling 
+Use className prop to assign an className to the component and apply any custom css accordingly.
+```JSX
+  <Firefly
+      className='firefly-react-example-classname' 
    />
 
 ```
-```CSS
 
-.firefly-react{
+```CSS
+.firefly-react-example-classname{
   position: absolute;
   top: 0;
   left: 0;
