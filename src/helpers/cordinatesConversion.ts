@@ -79,6 +79,6 @@ export function radianToDegree(radian) {
  * @returns {Number}    inbound angle
  */
 
-export function inBound(degree){
-    return (degree <=360 ? degree : degree % 360)
+export function inBound(degree) {
+  return degree <= 360 ? degree : degree % 360;
 }

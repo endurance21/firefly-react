@@ -1,6 +1,6 @@
 {
   "name": "firefly-react",
-  "version": "22.04.20231",
+  "version": "22.05.0",
   "description": "A react component to bring interactive fireflies animation on websites",
   "main": "dist/index.js",
   "repository": {
@@ -46,7 +46,7 @@
     "build": "rollup -c && tsc --emitDeclarationOnly",
     "start": "rollup -c -w",
     "publish:public": "npm publish --access public",
-    "pretty:check":"prettier --check src/ ",
-    "pretty:write":"prettier --write src/"
+    "pretty:check": "prettier --check src/ ",
+    "pretty:write": "prettier --write src/"
   }
 }

@@ -79,7 +79,7 @@ export class Firefly {
 
     if (x + this.size.width >= width - this.size.width && vx > 0) {
       let new_vx = -vx;
-      let new_vy =  vy;
+      let new_vy = vy;
 
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
@@ -87,22 +87,22 @@ export class Firefly {
     }
     if (x - this.size.width <= this.size.width && vx < 0) {
       let new_vx = -vx;
-      let new_vy =  vy;
+      let new_vy = vy;
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
     }
     if (y + this.size.width >= height - this.size.width && vy > 0) {
       let new_vx = vx;
-      let new_vy =  -vy;
+      let new_vy = -vy;
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
     }
     if (y - this.size.width <= this.size.width && vy < 0) {
       let new_vx = vx;
-      let new_vy =  -vy;
-     
+      let new_vy = -vy;
+
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;

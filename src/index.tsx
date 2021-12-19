@@ -16,7 +16,7 @@ type props = {
 const fireflies: Firefly[] = [];
 
 /**
- *  throtlled function , so that it smartly avoid redundant function call and hence avoid 
+ *  throtlled function , so that it smartly avoid redundant function call and hence avoid
  * to give birth so many fireflies in one mouse move or so.
  * @function
  */
@@ -104,10 +104,10 @@ const ReactFirefly = (props: props) => {
   }, [mousePosition]);
 
   /**
- *  This function initilizes the whole state of the project 
- * including canvas context to initial give firefly generations.
- * @function
- */
+   *  This function initilizes the whole state of the project
+   * including canvas context to initial give firefly generations.
+   * @function
+   */
   const init = () => {
     resizeCanvas();
     context.current = canvas.current.getContext("2d");
@@ -129,18 +129,18 @@ const ReactFirefly = (props: props) => {
   };
 
   /**
- *  wrapper function to just resize the canvas dimension 
- * @function
- */
+   *  wrapper function to just resize the canvas dimension
+   * @function
+   */
   const resizeCanvas = () => {
     canvas.current.width = canvasWidth;
     canvas.current.height = canvasHeight;
   };
   /**
- *  whenever user resizes the canvas in the application this handler
- * takes care of new boundary of the canvas and updates accordinglyß
- * @function
- */
+   *  whenever user resizes the canvas in the application this handler
+   * takes care of new boundary of the canvas and updates accordinglyß
+   * @function
+   */
   const setBoundary = () => {
     let rect = canvas.current.getBoundingClientRect();
     let x = rect.left;
@@ -152,11 +152,11 @@ const ReactFirefly = (props: props) => {
   };
 
   /**
- *  This is animation engine of the whole project
- * it updates position of every firefly and is 
- * also responsible for painting to the canvas
- * @function
- */
+   *  This is animation engine of the whole project
+   * it updates position of every firefly and is
+   * also responsible for painting to the canvas
+   * @function
+   */
   const animate = () => {
     requestRef.current = requestAnimationFrame(animate);
     context.current.clearRect(0, 0, canvasWidth, canvasHeight);
