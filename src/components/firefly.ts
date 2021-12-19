@@ -1,7 +1,6 @@
 import { Position, Velocity, DirectionTurner, Dimension } from "../interfaces/firefly";
 import { polarToCartesian, cartesianToPolar, inBound } from "../helpers/cordinatesConversion";
 import { getRandomInt } from "../helpers/random";
-import { circleToLine } from "../helpers/collision";
 
 /**
  * Represents the firefly
@@ -79,25 +78,31 @@ export class Firefly {
     let { x: vx, y: vy } = polarToCartesian(this.velocity.speed, this.velocity.direction);
 
     if (x + this.size.width >= width - this.size.width && vx > 0) {
-      let { x: new_vx, y: new_vy } = circleToLine({ x: vx, y: vy }, { x: 1, y: 0 });
+      let new_vx = -vx;
+      let new_vy =  vy;
+
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
     }
     if (x - this.size.width <= this.size.width && vx < 0) {
-      let { x: new_vx, y: new_vy } = circleToLine({ x: vx, y: vy }, { x: 1, y: 0 });
+      let new_vx = -vx;
+      let new_vy =  vy;
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
     }
     if (y + this.size.width >= height - this.size.width && vy > 0) {
-      let { x: new_vx, y: new_vy } = circleToLine({ x: vx, y: vy }, { x: 0, y: 1 });
+      let new_vx = vx;
+      let new_vy =  -vy;
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
     }
     if (y - this.size.width <= this.size.width && vy < 0) {
-      let { x: new_vx, y: new_vy } = circleToLine({ x: vx, y: vy }, { x: 0, y: 1 });
+      let new_vx = vx;
+      let new_vy =  -vy;
+     
       let { r, theta } = cartesianToPolar(new_vx, new_vy);
       this.velocity.speed = r;
       this.velocity.direction = theta;
