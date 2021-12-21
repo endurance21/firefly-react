@@ -1,5 +1,4 @@
 
-
 ![screen-capture (20)](https://user-images.githubusercontent.com/43696525/120792229-cd763b80-c552-11eb-85c2-7ceeda82793a.gif)
 
 
@@ -11,6 +10,8 @@ A React Component for building interactive animation of fireflies on websites.
       <img alt="npms.io (quality)" src="https://img.shields.io/npms-io/maintenance-score/firefly-react">
       <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/firefly-react">
       <img alt="GitHub" src="https://img.shields.io/github/license/endurance21/firefly-react">
+      <a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee"           height="30" width="150">
+      </a>
       </div>
 </p>
 
@@ -136,3 +137,11 @@ To learn and not to do is really not to learn. To know and not to do is really n
 
 <br>
 Thank you for reaching ♥️
+<br>
+<br>
+I find coffe to be my best acquaintance while coding.
+<br>
+<br>
+<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+
